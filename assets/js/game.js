@@ -3,14 +3,15 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
+console.log(enemyNames.length);
+
+
+
+var fight = function(enemyName) {
 
 
   // Alert players that they are starting the round
@@ -59,7 +60,7 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
     }
     // if no (false), ask question again by running fight() again
     else {
-      fight();
+     // fight(enemyRobot);
     }
   }
   
@@ -67,5 +68,17 @@ else {
   window.alert("You need to choose a valid option. Try again!");
 }
 }
-fight ();
 
+for(var i = 0; i < enemyNames.length; i++) {
+  fight(enemyNames[i]);
+}
+
+// Game States
+
+// "wIN" - Player robot has defeated all enemy-robots
+
+//    *Fight all enemy-robots
+
+//    *Defeat each enemy-robot
+
+// "LOSE" - Player robot's health is zero or less
